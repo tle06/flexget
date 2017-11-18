@@ -23,12 +23,6 @@ RUN pip install --upgrade setuptools && \
     chmod +x /entrypoint/*sh && \
     chmod +x /entrypoint/entrypoint.d/*.sh
 
-
-RUN crontab -l > /tmp/mycron && \
-    echo "@hourly /usr/local/bin/flexget -c /config/config.yml --cron execute" >> /tmp/mycron && \
-    echo "@reboot /usr/local/bin/flexget -c /config/config.yml daemon start -d" >> /tmp/mycron && \
-    crontab /tmp/mycron
-
 #Cleaning
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
