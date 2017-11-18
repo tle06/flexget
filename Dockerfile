@@ -13,6 +13,8 @@ RUN apt-get update && \
         python-pip \
         cron
 
+COPY entrypoint /entrypoint
+
 #Install flexget
 RUN pip install --upgrade setuptools && \
     pip install --upgrade pip && \
