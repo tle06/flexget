@@ -30,7 +30,7 @@ RUN apt-get clean && \
 
 WORKDIR /config
 ENTRYPOINT ["/bin/bash", "/entrypoint/entrypoint.sh"]
-CMD ["/usr/local/bin/flexget", "-c"," /config/config.yml", "--loglevel", "info", "daemon", "start","-d"]
+CMD ["flexget", "-c","/config/config.yml", "--loglevel", "info", "daemon", "start"]
 
 
 LABEL maintainer="support@tlnk.fr"
