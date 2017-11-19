@@ -5,5 +5,5 @@ if [ -f /config/config.yml ]; then
 else
   echo "[Init] New config.yml from template"
   touch /config/config.yml
-  echo "task:" >> /config/config.yml
+  echo "tasks:" >> /config/config.yml
 fi
